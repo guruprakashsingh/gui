@@ -1,0 +1,102 @@
+from tkinter import *
+
+cal=Tk()
+cal.geometry("354x460")
+cal.title("Calculator")
+label=Label(cal,text="CALCULATOR",bg="dark grey",font=("Times",30,"bold"))
+label.pack(side=TOP)
+cal.config(background="Dark grey")
+
+textin=StringVar()
+operator=''
+
+def clkbtn(number):
+    global operator
+    operator=operator+str(number)
+    textin.set(operator)
+
+def eqlbtn():
+    global operator
+    add=str(eval(operator))
+    textin.set(add)
+    operator=''
+
+def eqlbtn():
+    global operator
+    sub=str(eval(operator))
+    textin.set(sub)
+    operator=''
+
+def eqlbtn():
+    global operator
+    mul=str(eval(operator))
+    textin.set(mul)
+    operator=''
+
+def eqlbtn():
+    global operator
+    div=str(eval(operator))
+    textin.set(div)
+    operator=''
+
+def clr():
+    clear=''
+    textin.set(clear)
+
+
+
+caltext=Entry(cal,font=("Courier New",16,"bold"),bg="powder blue",width=25,bd=5,textvar=textin,justify='right')
+caltext.pack()
+
+btn1=Button(cal,padx=14,pady=14,bd=4,bg="white",text="1",command=lambda:clkbtn(1),font=("Courier New",16,"bold"))
+btn1.place(x=10,y=100)
+
+btn2=Button(cal,padx=14,pady=14,bd=4,bg="white",text="2",command=lambda:clkbtn(2),font=("Courier New",16,"bold"))
+btn2.place(x=10,y=170)
+
+btn3=Button(cal,padx=14,pady=14,bd=4,bg="white",text="3",command=lambda:clkbtn(3),font=("Courier New",16,"bold"))
+btn3.place(x=10,y=240)
+
+btn4=Button(cal,padx=14,pady=14,bd=4,bg="white",text="4",command=lambda:clkbtn(4),font=("Courier New",16,"bold"))
+btn4.place(x=75,y=100)
+
+btn5=Button(cal,padx=14,pady=14,bd=4,bg="white",text="5",command=lambda:clkbtn(5),font=("Courier New",16,"bold"))
+btn5.place(x=75,y=170)
+
+btn6=Button(cal,padx=14,pady=14,bd=4,bg="white",text="6",command=lambda:clkbtn(6),font=("Courier New",16,"bold"))
+btn6.place(x=75,y=240)
+
+btn7=Button(cal,padx=14,pady=14,bd=4,bg="white",text="7",command=lambda:clkbtn(7),font=("Courier New",16,"bold"))
+btn7.place(x=140,y=100)
+
+btn8=Button(cal,padx=14,pady=14,bd=4,bg="white",text="8",command=lambda:clkbtn(8),font=("Courier New",16,"bold"))
+btn8.place(x=140,y=170)
+
+btn9=Button(cal,padx=14,pady=14,bd=4,bg="white",text="9",command=lambda:clkbtn(9),font=("Courier New",16,"bold"))
+btn9.place(x=140,y=240)
+
+btn0=Button(cal,padx=14,pady=14,bd=4,bg="white",text="0",command=lambda:clkbtn(0),font=("Courier New",16,"bold"))
+btn0.place(x=10,y=310)
+
+btndot=Button(cal,padx=47,pady=14,bd=4,bg="white",text=".",command=lambda:clkbtn("."),font=("Courier New",16,"bold"))
+btndot.place(x=75,y=310)
+
+btnp1=Button(cal,padx=14,pady=14,bd=4,bg="white",text="+",command=lambda:clkbtn("+"),font=("Courier New",16,"bold"))
+btnp1.place(x=205,y=100)
+
+btnp1=Button(cal,padx=14,pady=14,bd=4,bg="white",text="-",command=lambda:clkbtn('-'),font=("Courier New",16,"bold"))
+btnp1.place(x=205,y=170)
+
+btnmul=Button(cal,padx=14,pady=14,bd=4,bg="white",text="*",command=lambda:clkbtn('*'),font=("Courier New",16,"bold"))
+btnmul.place(x=205,y=240)
+
+btndiv=Button(cal,padx=14,pady=14,bd=4,bg="white",text="/",command=lambda:clkbtn('/'),font=("Courier New",16,"bold"))
+btndiv.place(x=205,y=310)
+
+btnclr=Button(cal,padx=14,pady=119,bd=4,bg="white",text="CE",command=clr,font=("Courier New",16,"bold"))
+btnclr.place(x=270,y=100)
+
+btneql=Button(cal,padx=151,pady=14,bd=4,bg="white",text="=",command=eqlbtn,font=("Courier New",16,"bold"))
+btneql.place(x=10,y=380)
+
+cal.mainloop()
