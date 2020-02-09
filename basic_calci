@@ -1,5 +1,6 @@
-from tkinter import *
+from tkinter import *        #importing tkinter module
 
+creating working environment
 cal=Tk()
 cal.geometry("354x460")
 cal.title("Calculator")
@@ -10,6 +11,7 @@ cal.config(background="Dark grey")
 textin=StringVar()
 operator=''
 
+#creating function to perform arithmetic operation
 def clkbtn(number):
     global operator
     operator=operator+str(number)
@@ -43,7 +45,7 @@ def clr():
     clear=''
     textin.set(clear)
 
-
+#making entry
 
 caltext=Entry(cal,font=("Courier New",16,"bold"),bg="powder blue",width=25,bd=5,textvar=textin,justify='right')
 caltext.pack()
